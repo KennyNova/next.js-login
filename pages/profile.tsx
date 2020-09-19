@@ -9,6 +9,10 @@ const StyledProfile = styled.div`
   h1 {
     font-size: 60px;
   }
+  img{
+    height:100px;
+    width: 100px;
+  }
 `;
 
 export default function Profile() {
@@ -28,9 +32,8 @@ export default function Profile() {
   return (
     <MainLayout>
       <StyledProfile>
-        <h1>🤸</h1>
-        <p>Welcome to the Profile Page! Here is your profile information:</p>
-        <p>{JSON.stringify(user)}</p>
+        <img src={JSON.stringify(user.picture).substring(1, JSON.stringify(user.picture).length -1)} ></img>
+        <p>Welcome to your Profile Page {JSON.stringify(user.given_name).substring(1, JSON.stringify(user.given_name).length -1)} {JSON.stringify(user.family_name).substring(1, JSON.stringify(user.family_name).length -1)}!</p>
       </StyledProfile>
     </MainLayout>
   );
